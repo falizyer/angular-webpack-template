@@ -1,6 +1,8 @@
 const path = require("path");
 const defaultConfig = require("./default.config");
 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const config = {
     webpack: {
         context: defaultConfig.src,
@@ -19,11 +21,15 @@ const config = {
             chunkFilename: "[id].bundle.js"
         },
         resolve: {
-            modules: ["dev-src", "node_modules"],
+            modules: ["node_modules"],
             mainFiles: ["index"],
-            extensions: [".less", ".js"]
+            extensions: [".scss", ".js"]
         },
         plugins: [
+            new HtmlWebpackPlugin({
+                filename: "./index.html",
+                template: "./index.ejs"
+            })
         ],
         module: {
             loaders: [{
