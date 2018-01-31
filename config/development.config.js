@@ -23,7 +23,7 @@ const config = {
         resolve: {
             modules: ["node_modules"],
             mainFiles: ["index"],
-            extensions: [".scss", ".js"]
+            extensions: [".less", ".js"]
         },
         plugins: [
             new HtmlWebpackPlugin({
@@ -33,6 +33,13 @@ const config = {
         ],
         module: {
             loaders: [{
+                test: /\.style\.less$/,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "less-loader"
+                ]
+            }, {
                 test: /\.js$/,
                 exclude: /(node_modules)/,
                 loader: "babel-loader",
