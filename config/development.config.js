@@ -32,14 +32,15 @@ const config = {
             })
         ],
         module: {
+            // rules: [{
+            //     test: /\.js$/,
+            //     exclude: /node_modules/,
+            //     loader: "eslint-loader",
+            //     options: {
+            //         // eslint options (if necessary)
+            //     }
+            // }],
             loaders: [{
-                test: /\.style\.less$/,
-                use: [
-                    "style-loader",
-                    "css-loader",
-                    "less-loader"
-                ]
-            }, {
                 test: /\.js$/,
                 exclude: /(node_modules)/,
                 loader: "babel-loader",
@@ -47,6 +48,13 @@ const config = {
                     presets: ["es2015"],
                     plugins: []
                 }
+            }, {
+                test: /\.style\.less$/,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "less-loader"
+                ]
             }]
         }
     }
