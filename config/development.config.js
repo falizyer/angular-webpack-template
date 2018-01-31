@@ -52,9 +52,15 @@ const config = {
                 test: /\.style\.less$/,
                 use: [
                     "style-loader",
-                    "css-loader",
+                    {loader: "css-loader", options: {importLoaders: 1}},
                     "less-loader"
                 ]
+            }, {
+                test: /\.tpl\.html$/,
+                loader: "html-loader"
+            }, {
+                test: /\.json$/,
+                loader: 'json-loader'
             }]
         }
     }
