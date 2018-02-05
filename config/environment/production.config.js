@@ -1,14 +1,15 @@
 const path = require("path");
-const defaultConfig = require("./default.config");
+const defaultConfig = require("../default.config");
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const config = {
     webpack: {
         context: defaultConfig.src,
-        devtool: "eval",
+        devtool: "source-map",
         entry: {
-            "angular-webpack-template": ["./app.js"]
+            "angular-webpack-template": ["./index.module.js"]
         },
         stats: {
             colors: true,
@@ -26,6 +27,7 @@ const config = {
             extensions: [".less", ".js"]
         },
         plugins: [
+            new UglifyJsPlugin(),
             new HtmlWebpackPlugin({
                 filename: "./index.html",
                 template: "./index.ejs"
