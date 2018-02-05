@@ -1,10 +1,10 @@
-import {element} from "angular";
+import {element, mock} from "angular";
 
 describe("HelloWorld component unit test: ", function () {
 
     let scope, controller, tplElement;
 
-    beforeEach(angular.mock.module("tplApp.component.hello-world"));
+    beforeEach(mock.module("tplApp.component.hello-world"));
     beforeEach(inject(function ($rootScope, $controller, $compile) {
         scope = $rootScope.$new();
         controller = $controller;
