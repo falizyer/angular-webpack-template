@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --config ./config/webpack.config.js --env production",
     "build-dev": "webpack --config ./config/webpack.config.js --env development",
-    "test": "karma start ./config/karma.config.js --env test"
+    "test": "karma start ./config/karma.config.js --env test",
+    "dev-watch": "webpack-dev-server --config ./config/webpack.config.js --env development"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "style-loader": "^0.20.1",
     "uglifyjs-webpack-plugin": "^1.1.8",
     "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1",
     "webpack-karma-jasmine": "^1.0.4",
     "yargs": "^11.0.0"
   },

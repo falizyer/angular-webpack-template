@@ -54,6 +54,11 @@ const config = {
                 test: /\.json$/,
                 loader: 'json-loader'
             }]
+        },
+        devServer: {
+            contentBase: defaultConfig.dist,
+            compress: true,
+            port: 9000
         }
     }
 };
